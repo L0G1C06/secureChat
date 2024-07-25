@@ -1,0 +1,3 @@
+Implementar um server de chat utilizando a criptografia AES e DiffieHelman entre duas pessoas e um espião
+
+Usar CLI msm para facilitar
