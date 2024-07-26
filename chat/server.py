@@ -3,9 +3,9 @@ import threading
 from dotenv import load_dotenv
 import os
 
-load_dotenv()
-
 from cryptoutils import DiffieHellman
+
+load_dotenv()
 
 # Lista para armazenar clientes conectados
 clients = []
