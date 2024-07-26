@@ -1,10 +1,16 @@
 import socket
 import threading
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 from cryptoutils import DiffieHellman
 
 # Lista para armazenar clientes conectados
 clients = []
+HOST = os.getenv("HOST")
+PORT = os.getenv("PORT")
 
 # Função para enviar mensagens a todos os clientes conectados
 def broadcast(message, _client):
@@ -40,7 +46,7 @@ def handle_client(client_socket, client_address):
 # Configuração do servidor
 def start_server():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server.bind(('127.0.0.1', 5555))
+    server.bind((HOST, int(PORT)))
     server.listen()
 
     print("Servidor de chat iniciado...")
